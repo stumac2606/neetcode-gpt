@@ -5,7 +5,7 @@ from numpy.typing import NDArray
 class Solution:
     def get_derivative(self, model_prediction: NDArray[np.float64], ground_truth: NDArray[np.float64], N: int, X: NDArray[np.float64], desired_weight: int) -> float:
         # note that N is just len(X)
-        print(f"N: {N}")
+
         return -2 * np.dot(ground_truth - model_prediction, X[:, desired_weight]) / N
         #gradient = self.get_derivative(predictions, Y, len(X), X, weights)
 
@@ -24,7 +24,7 @@ class Solution:
         # For each iteration:
         weights = initial_weights
         print(f"weights: {weights}")
-        for i in range(num_iterations): # needed to find renge() function
+        for i in range(num_iterations): 
         
         #   1. Compute predictions with get_model_prediction(X, weights)
             predictions = self.get_model_prediction(X, weights)
