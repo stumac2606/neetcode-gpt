@@ -22,6 +22,7 @@ class Solution:
             batch_mean = np.mean(x, axis = 0)
             batch_var = np.var(x, axis = 0)
             # Apply affine transform: y = gamma * x_hat + beta
+            # x_hat will now have a mean of exactly 0 and a variance of exactly 1.
             x_hat = (x - batch_mean) / np.sqrt(batch_var + eps)
             running_mean = (1 - momentum) * running_mean + momentum * batch_mean
             running_var = (1 - momentum) * running_var + momentum * batch_var
